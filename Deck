@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Deck
+{
+   public static void main(String[] args)
+   {
+      Random rand = new Random();
+      
+      ArrayList<String> suit = new ArrayList<String>();
+      suit.add("♣");
+      suit.add("♦");
+      suit.add("♥");
+      suit.add("♠");
+      
+      ArrayList<String> rank = new ArrayList<String>();
+      rank.add("A");
+      rank.add("2");
+      rank.add("3");
+      rank.add("4");
+      rank.add("5");
+      rank.add("6");
+      rank.add("7");
+      rank.add("8");
+      rank.add("9");
+      rank.add("10");
+      rank.add("J");
+      rank.add("Q");
+      rank.add("K");
+      
+      ArrayList<String> deck = new ArrayList<String>();
+      for (int s = 0; s < suit.size(); s++)
+      {
+         for (int n = 0; n < rank.size(); n++)
+         {
+            deck.add(rank.get(n) + suit.get(s));
+         }
+      }
+      
+      // Used to print the cards vertically in a deck  
+      for (int i = 0; i < deck.size(); i++)
+      {
+         System.out.printf("%3s\n", deck.get(i));
+      }
+      
+      // Shuffle
+      System.out.println();
+      ArrayList<String> shuffledDeck = new ArrayList<String>();
+      for (int i = 0; i < deck.size(); i++)
+      {
+         int index = rand.nextInt(deck.size());
+         shuffledDeck.add(i, deck.get(index));  
+      }
+      
+      // Used to print the cards vertically in a deck 
+      for (int i = 0; i < shuffledDeck.size(); i++)
+      {
+         System.out.printf("%3s\n", shuffledDeck.get(i));
+      }
+   }
+}
