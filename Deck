@@ -35,6 +35,10 @@ public class Deck
          }
       }
       
+      // Card Value
+      int value = 0;
+      int ace = 0;
+      
       // Shuffle
       System.out.println();
       Collections.shuffle(deck);
